@@ -12,6 +12,7 @@ def main():
         test01 = "irtest"
         test02 = "balancetest"
         test03 = "bdvtest"
+        b=10
         if (test == test01):
             Test1 = ir_test()
             print(Back.BLUE + Fore.BLACK + "IR Test Condition Verified & Report Generated")
