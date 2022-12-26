@@ -22,8 +22,7 @@ try:
             else:
                 print("Input invalid, kindly give a Correct Test name to generate report.")
 
-        Tfr_Testing = testing()
-
+        testing()
 
     def ir_test():
         print("File Name entered :", sys.argv[2])
