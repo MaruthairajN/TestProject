@@ -30,6 +30,7 @@ try:
         try:
             with open(sys.argv[2], 'r') as f:
                 data = json.load(f)
+            data['1_Connections']
             print(Back.WHITE + Fore.BLACK + "Insulation Resistance Test Report")
             print("\t")
             print("Connection : ", data['1_Connections'], " ", " Applied Voltage : ", data['1_AppVolt'], "V")
@@ -71,6 +72,7 @@ try:
             print("\t")
             print(Back.BLUE + Fore.BLACK + "IR Test Condition Verified & Report Generated")
         except:
+            print("\t")
             print("Invalid File input, unable to read json file")
 
 
@@ -79,6 +81,7 @@ try:
         try:
             with open(sys.argv[2], 'r') as f:
                 data = json.load(f)
+            data['1U1V']
             print(Back.WHITE + Fore.BLACK + "Balance Test Report")
             print("\t")
             print("Phase Reading Values")
@@ -123,6 +126,7 @@ try:
             print("\t")
             print(Back.BLUE + Fore.BLACK + "Phase Balance Test Condition Verified & Report Generated")
         except:
+            print("\t")
             print("Invalid File input, unable to read json file")
 
 
@@ -160,6 +164,7 @@ try:
             print("\t")
             print(Back.BLUE + Fore.BLACK + "Oil BDV Test Condition Verified & Report Generated")
         except:
+            print("\t")
             print("Invalid File input, unable to read json file")
 
 
