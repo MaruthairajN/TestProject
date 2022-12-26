@@ -1,27 +1,24 @@
-# Python program to read
-# json file
 import json
 import math
+import sys
 import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
 def main():
     def testing():
-        test = input("Enter the Test Name to do (irtest, balancetest, bdvtest) : ")
-        test01 = "irtest"
-        test02 = "balancetest"
-        test03 = "bdvtest"
-        if (test == test01):
-            Test1 = ir_test()
+        print("Report Generating for ", str(sys.argv[1]))
+
+        if (str(sys.argv[1]) == 'irtest'):
+            ir_test()
             print(Back.BLUE + Fore.BLACK + "IR Test Condition Verified & Report Generated")
             print("\t")
-        elif (test == test02):
-            Test2 = balance_test()
+        elif (str(sys.argv[1]) == 'balancetest'):
+            balance_test()
             print(Back.BLUE + Fore.BLACK + "Phase Balance Test Condition Verified & Report Generated")
             print("\t")
-        elif (test == test03):
-            Test3 = bdv_test()
+        elif (str(sys.argv[1]) == 'bdvtest'):
+            bdv_test()
             print(Back.BLUE + Fore.BLACK + "Oil BDV Test Condition Verified & Report Generated")
             print("\t")
         else:
@@ -29,9 +26,8 @@ def main():
     Tfr_Testing = testing()
 
 def ir_test():
-    fileName= input("Enter the name of input file for IR Test : ")
-
-    with open(fileName, 'r') as f:
+    print("File Name entered :", sys.argv[2])
+    with open(sys.argv[2], 'r') as f:
         data = json.load(f)
     print(Back.WHITE + Fore.BLACK + "Insulation Resistance Test Report")
     print("\t")
@@ -76,9 +72,8 @@ def ir_test():
     print("\t")
 
 def balance_test():
-    fileName = input("Enter the name of input file for Balance Test : ")
-
-    with open(fileName, 'r') as f:
+    print("File Name entered :", sys.argv[2])
+    with open(sys.argv[2], 'r') as f:
         data = json.load(f)
     print(Back.WHITE + Fore.BLACK + "Balance Test Report")
     print("\t")
@@ -124,11 +119,11 @@ def balance_test():
     print("\t")
 
 def bdv_test():
-    fileName = input("Enter the name of input file for BDV Test : ")
+    print("File Name entered :", sys.argv[2])
 
-    with open(fileName, 'r') as f:
+    with open(sys.argv[2], 'r') as f:
         data = json.load(f)
-    with open(fileName, 'w') as f:
+    with open(sys.argv[2], 'w') as f:
         json.dump(data, f)
 
     jsonData = data["bdv"]
