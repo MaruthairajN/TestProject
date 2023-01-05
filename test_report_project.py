@@ -45,7 +45,7 @@ try:
             print("\t")
 
             print("Connection : ", data['2_Connections'], " ", "Applied Voltage : ", data['2_AppVolt'], "V")
-            print("2 Min Value : ", data['2_OneMinValue'], " ", "10 Min Value : ", data['2_TenMinValue'])
+            print("1 Min Value : ", data['2_OneMinValue'], " ", "10 Min Value : ", data['2_TenMinValue'])
             Pivalue2 = float(data['2_TenMinValue']) / float(data['2_OneMinValue'])
 
             if (Pivalue2 >= 2):
@@ -58,7 +58,7 @@ try:
             print("\t")
 
             print("Connection : ", data['3_Connections'], " ", "Applied Voltage : ", data['3_AppVolt'], "V")
-            print("3 Min Value : ", data['3_OneMinValue'], " ", "10 Min Value : ", data['3_TenMinValue'])
+            print("1 Min Value : ", data['3_OneMinValue'], " ", "10 Min Value : ", data['3_TenMinValue'])
             Pivalue3 = float(data['3_TenMinValue']) / float(data['3_OneMinValue'])
 
             if (Pivalue3 >= 2):
