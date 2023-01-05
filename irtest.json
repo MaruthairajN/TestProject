@@ -1,1 +1,14 @@
-{"1_Connections": "HV-LV", "1_AppVolt": 5000, "1_OneMinValue": 5.57, "1_TenMinValue": 11.3, "2_Connections": "HV-E", "2_AppVolt": 5000, "2_OneMinValue": 3.52, "2_TenMinValue": 5.29, "3_Connections": "LV-E", "3_AppVolt": 1000, "3_OneMinValue": 1.26, "3_TenMinValue": 1.05}
+{
+  "1_Connections": "HV-LV",
+  "1_AppVolt": 5000,
+  "1_OneMinValue": 5.57,
+  "1_TenMinValue": 11.3,
+  "2_Connections": "HV-E",
+  "2_AppVolt": 5000,
+  "2_OneMinValue": 3.52,
+  "2_TenMinValue": 5.29,
+  "3_Connections": "LV-E",
+  "3_AppVolt": 1000,
+  "3_OneMinValue": 1.26,
+  "3_TenMinValue": 1.05
+}
