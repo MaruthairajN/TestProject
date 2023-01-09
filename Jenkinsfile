@@ -8,7 +8,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                bat 'python test_report_project.py %Testname% %Filename%'
+                bat 'python test_report_project.py %Filename%'
             }
         }
         stage('description') {
