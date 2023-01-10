@@ -4,6 +4,7 @@ import sys
 import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
+import matplotlib.pyplot as plt
 def ir_test():
     print("File Name entered :", sys.argv[1])
     try:
@@ -46,6 +47,14 @@ def ir_test():
             print("Suggestion : Need Improvement")
         print("\t")
         print(Back.BLUE + Fore.BLACK + "IR Test Condition Verified & Report Generated")
+        connections = ['HV-LV', 'HV-E', 'LV-E']
+        PIValue = [Pivalue1, Pivalue2, Pivalue3]
+        colors = ['green', 'blue', 'purple']
+        plt.bar(connections, PIValue, color=colors)
+        plt.title('IR Test Output', fontsize=14)
+        plt.xlabel('Connections', fontsize=14)
+        plt.ylabel('PI Value', fontsize=14)
+        plt.show()
     except:
         print("\t")
         print("Invalid File input, unable to read json file")
@@ -95,6 +104,15 @@ def balance_test():
             print(Back.CYAN + "B Phase Need Improvement")
         print("\t")
         print(Back.BLUE + Fore.BLACK + "Phase Balance Test Condition Verified & Report Generated")
+        connections = ['U1', 'U2', 'V1', 'V2', 'W1', 'W2']
+        PhaseValue = [data['1U1V'], A1, data['2V2W'], B1, data['3W3U'], C1]
+        colors = ['green', 'green', 'blue', 'blue', 'purple', 'purple']
+        plt.bar(connections, PhaseValue, color=colors)
+        plt.title('Phase Balance Test Output', fontsize=14)
+        plt.xlabel('U V W Phases', fontsize=14)
+        plt.ylabel('Phase Voltage', fontsize=14)
+        plt.grid(True)
+        plt.show()
     except:
         print("\t")
         print("Invalid File input, unable to read json file")
@@ -126,6 +144,15 @@ def bdv_test():
             print(Back.BLUE + "Suggestion : Need Improvement")
         print("\t")
         print(Back.BLUE + Fore.BLACK + "Oil BDV Test Condition Verified & Report Generated")
+        connections = ['BDV']
+        PhaseValue = [Average]
+        colors = ['blue']
+        plt.bar(connections, PhaseValue, color=colors)
+        plt.title('Oil BDV Test Output', fontsize=14)
+        plt.xlabel('BDV Reading', fontsize=14)
+        plt.ylabel('Average Voltage Value', fontsize=14)
+        plt.grid(True)
+        plt.show()
     except:
         print("\t")
         print("Invalid File input, unable to read json file")
